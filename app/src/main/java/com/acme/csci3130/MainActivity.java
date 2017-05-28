@@ -5,9 +5,14 @@ import android.os.Bundle;
 
 public class MainActivity extends Activity {
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+    int Validate(String password){
+        int testsPassed = 0;
+        if(!(password.toLowerCase().equals("password"))){
+            testsPassed++;
+        }
+        if(password.length()>7){
+            testsPassed++;
+        }
+        return testsPassed;
     }
 }
