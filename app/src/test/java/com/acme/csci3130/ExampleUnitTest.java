@@ -21,7 +21,7 @@ public class ExampleUnitTest extends MainActivity{
         String pass2 = "Password";
         String pass3 = "goewitgnwro";
         assertTrue(Validate(pass1)<2);
-        assertTrue(Validate(pass2)<2);
+        assertTrue(Validate(pass2)<3);
         assertTrue(Validate(pass3)==2);
     }
 
@@ -33,5 +33,31 @@ public class ExampleUnitTest extends MainActivity{
         assertTrue(Validate(pass1)<2);
         assertTrue(Validate(pass2)==2);
         assertTrue(Validate(pass3)==2);
+    }
+
+    @Test
+    public void testContainsDigit() throws Exception {
+        String pass1 = "qwertyui";
+        String pass2 = "qwertyui6";
+        assertTrue(Validate(pass1)<3);
+        assertTrue(Validate(pass2)==3);
+    }
+
+    @Test
+    public void testContainsCapital() throws Exception {
+        String pass1 = "Yqwertuio";
+        String pass2 = "qwertyuio";
+        String pass3 = "qwHrKuio";
+        assertTrue(Validate(pass1)==3);
+        assertTrue(Validate(pass2)<3);
+        assertTrue(Validate(pass3)==3);
+    }
+
+    @Test
+    public void testContainsSpecialChar() throws Exception {
+        String pass1 = "qwertuio";
+        String pass2 = "qwer$yuio";
+        assertTrue(Validate(pass1)<3);
+        assertTrue(Validate(pass2)==3);
     }
 }
