@@ -15,7 +15,7 @@ public class ExampleUnitTest extends MainActivity{
         assertEquals(4, 2 + 2);
     }
 
-   /*@Test
+   @Test
     public void testIsPassword() throws Exception {
         String pass1 = "password";
         String pass2 = "Password";
@@ -59,5 +59,5 @@ public class ExampleUnitTest extends MainActivity{
         String pass2 = "qwer$yuio";
         assertTrue(Validate(pass1)<3);
         assertTrue(Validate(pass2)==3);
-    }*/
+    }
 }
