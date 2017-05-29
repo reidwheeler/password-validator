@@ -21,8 +21,6 @@ import static android.support.test.espresso.matcher.ViewMatchers.withText;
 @LargeTest
 public class SimpleEspressoTest {
 
-    private String textToFind;
-
     @Rule
     public ActivityTestRule<MainActivity> mActivityRule = new ActivityTestRule<>(
             MainActivity.class);
@@ -39,6 +37,6 @@ public class SimpleEspressoTest {
         onView(withId(R.id.editText)).perform(replaceText("rgstgetgrthgrxst"));
         onView(withId(R.id.button));
         onView(withId(R.id.button)).perform(click());
-        onView(withId(R.id.helloText)).check(matches(withText("Invalid password!")));
+        onView(withId(R.id.helloText)).check(matches(withText("Invalid Password!")));
     }
 }
