@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Button;
 
 public class MainActivity extends Activity {
 
@@ -14,8 +15,11 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
 
-    int Validate(String password){
+    void Validate(View view){
         int testsPassed = 0;
+        TextView message = (TextView)findViewById(R.id.helloText);
+        EditText phrase = (EditText) findViewById(R.id.editText);
+        String password = phrase.getText().toString();
 
         if(!(password.toLowerCase().equals("password"))){
             testsPassed++;
@@ -32,6 +36,11 @@ public class MainActivity extends Activity {
         if(password.matches(".*[^A-Za-z0-9].*")){
             testsPassed++;
         }
-        return testsPassed;
+        if(testsPassed<5){
+            message.setText("Invalid Password!");
+        }
+        else{
+            message.setText("Valid Password!");
+        }
     }
 }
